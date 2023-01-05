@@ -5,9 +5,13 @@ using System;
 
 public class Turret : MonoBehaviour
 {
-    [SerializeField] private float attackRange = 3f;
+    private CircleCollider2D circleCollider2D;
+    [SerializeField] private float attackRange = 6f;
 
     public Enemy CurrentEnemyTarget { get; set; }
+    public TurretUpgrade TurretUpgrade { get; set; }
+    public float AttackRange => attackRange;
+
     public static Action<Turret> OnEnemyDetect;
     private Turret _turret;
 
@@ -20,11 +24,14 @@ public class Turret : MonoBehaviour
         _gameStarted = true;
         _enemies = new List<Enemy>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        circleCollider2D = GetComponent<CircleCollider2D>();
+        TurretUpgrade = GetComponent<TurretUpgrade>();
     }
     private void Update()
     {
         GetCurrentEnemyTarget();
         RotateTowardsTarget();
+        circleCollider2D.radius = AttackRange;
         }
     private void GetCurrentEnemyTarget()
     {

@@ -204,7 +204,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 6
 --- !u!114 &5530075941634128676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee233d6caddeb2549ac17adcf434e640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 3
+  attackRange: 6
 --- !u!114 &3859631445877913470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +263,7 @@ MonoBehaviour:
   upgradeCostIncremental: 20
   damageIncremental: 2
   ddelayReduce: 0.2
+  sellPert: 0.5
 --- !u!95 &8715087074298516960
 Animator:
   serializedVersion: 4
